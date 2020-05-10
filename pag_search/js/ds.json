@@ -1,0 +1,28 @@
+[{
+        "id": 10259,
+        "cuisine": "greek",
+        "ingredients": [
+            "beef",
+            "eggs",
+            "rice"
+        ]
+    },
+    {
+        "id": 25693,
+        "cuisine": "southern_us",
+        "ingredients": [
+            "salmon",
+            "potatoes",
+            "tuna"
+        ]
+    },
+    {
+        "id": 20130,
+        "cuisine": "filipino",
+        "ingredients": [
+            "tuna",
+            "pasta",
+            "ketchup"
+        ]
+    }
+]
