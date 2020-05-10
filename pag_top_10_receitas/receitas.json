@@ -1,0 +1,102 @@
+[{
+    "title": "Francesinha",
+    "category": "português",
+    "difficulty": 2,
+    "ingredients": ["bife de vaca", "queijo", "pão de forma", "salsicha", "linguiça", "fiambre", "sal", "pimenta"],
+    "quantity": ["2", "8 fatias", "6 fatias", "2", "2", "2 fatias", "q.b", "q.b"],
+    "time": 45,
+    "portions": 2,
+    "rating": 5,
+    "steps": ["Cortar as salsichas ao meio e cortar novamente as metades, temperando de seguida com sal e pimenta. Cortar as linguiças de igual modo. Temperar os bifes com sal e pimenta, q.b, grelhando tudo de seguida.", "Torrar ligeiramente as fatias de pão, cobrindo depois com uma fatia de fiambre. Juntar por cima o bife e colocar então outra fatia de pão por cima. Adicionar a salsicha e a linguiça, cobrir com queijo e finalizar com a última fatia de pão. Cobrir tudo com 3 fatias de queijo e levar ao forno a 200ºC até derreter. Regar com molho de francesinha."]
+},{
+    "title": "Almôndegas de Soja c/ molho de tomate",
+    "category": ["vegetariano", "vegan"],
+    "difficulty": 3, 
+    "ingredients": ["azeite", "alho", "cebola", "fermento", "pão ralado", "farinha", "soja granulada", "salsa", "oregãos", "sal", "tomate", "açúcar", "manjericão", "massa"],
+    "quantity":["5 c. sopa", "1 dente", "1", "1/4 c. chá", "1/4 chávena + 2 c. sopa", "1/4 chávena + 2 c. sopa", "3/4 chávena", "3 c. sopa", "q.b", "q.b", "3", "1 c. sopa", "1 c. chá", "q.b"], 
+    "time": 20,
+    "portions": 8,
+    "rating": 4.8,
+    "steps": ["Preparar uma panela para colocar ao lume, com um cesto de cozinhar a vapor.","Demolhar a soja durante 4min.", "Escorrer bem a água da soja e reservar.", "Numa sertã, adicionar azeite, alho e cebola picados, mexer até ficar dourado.","Numa taça, misturar a soja com pão ralado, adicionar as ervas a gosto, sal, 3 colheres de sopa de azeite, a cebola e alho que alourou, a farinha e fermento. Misturar bem, podendo ser necessário amassar com as mãos.", "Dividir a massa, dar a forma de almôndegas e, quando a água da panela (passo 1) estiver a ferver, cozer as almôndegas a vapor durante 15 minutos.", "Para o molho, saltear novamente cebola com alho, adicionar as almôndegas já cozinhadas. Mexer sempre.", "Adicionar então tomate cortado, sal, um pouco de açúcar e as ervas aromáticas. Deixar apurar durante uns minutos.", "Servir com massa."]
+}, {
+    "title": "Bolo de Chocolate em Caneca",
+    "category": ["sobremesa", "bolo", "doces"],
+    "difficulty": 1,
+    "ingredients": ["ovo", "açúcar", "óleo", "farinha", "leite meio-gordo", "chocolate em pó","fermento em pó"],
+    "quantity": ["1", "1 c. sopa", "3 c. sopa", "4 c. sopa", "4 c. sopa", "4 c. sopa", "1 c. chá"],
+    "time": 5,
+    "portions": 1, 
+    "rating": 4.7, 
+    "steps":["Numa caneca bater um ovo. Juntar o óleo, açúcar e leite e mexer até ficar homogéneo.", "Numa taça à parte, misturar a farinha, o fermento e o chocolate.", "Adicionar a mistura seca à caneca, lentamente, mexendo bem.","Levar ao microondas durante 3 minutos, potência máxima.", "Servir diretamente na caneca."] 
+},{
+    "title": "Bacalhau com Natas",
+    "category": ["português", "tradicional"],
+    "difficulty": 4,
+    "ingredients": ["batata", "azeite", "bacalhau", "manteiga", "farinha", "leite meio-gordo", "natas", "sal", "noz-moscada", "pimenta", "limão", "alho", "cebelha"],
+    "quantity": ["500 g", "125 ml", "400 g", "40 g", "40 g", "250 ml", "250 ml", "1 c. sopa", "1 c. sopa", "q.b", "q.b", "3 dentes", "2"],
+    "time": 45,
+    "portions": 4, 
+    "rating": 4.5, 
+    "steps": ["Pré-aquecer o forno a 220ºC", "Cortar as batatas em cubos e fritar em azeite.", "Colocar o bacalhau num tacho e cobrir com água. Levar a cozinhar em lume alto; ao levantar fervura, baixar o lume e deixar por 5 min.", "Retirar o bacalhau da água e reservar 200 ml da água de cozedura. Deixar arrefecer o bacaulhau, retirar as peles e espinhas, de seguida desfiar.", "Levar um tacho ao lume e colocar a manteiga a derreter. Juntar a farinha e mexer bem, juntar lentamente os 200 ml da água que guardou, o leite e as natas.", "Quando começar a ferver, temperar com sal, pimenta, noz-moscada e algumas gotas de limão. Envolver todos os ingredientes.", "Noutro tacho, colocar 100 ml de aeite e deixar refogar as cebolas, alhos e uma folha de louro. Adicionar o bacalhau, mexer e deixar refogar.", "Juntar as batatas e envolva bem. Acrescentar então 2/3 do molho béchamel, mexer bem e retirar do lume.", "Pincelar um tabuleiro de forno com o restante azeite, passando então o preparado de bacalhau para o mesmo. Colocar por cima o resto do molho béchamel.", "Levar o tabuleiro ao forno para gratinar durante 15/20 minutos."]
+},{
+    "title": ,
+    "category": ,
+    "difficulty": ,
+    "ingredients": ,
+    "quantity": ,
+    "time": ,
+    "portions": , 
+    "rating": , 
+    "steps": 
+},{
+    "title": ,
+    "category": ,
+    "difficulty": ,
+    "ingredients": ,
+    "quantity": ,
+    "time": ,
+    "portions": , 
+    "rating": , 
+    "steps": 
+},{
+    "title": ,
+    "category": ,
+    "difficulty": ,
+    "ingredients": ,
+    "quantity": ,
+    "time": ,
+    "portions": , 
+    "rating": , 
+    "steps": 
+},{
+    "title": ,
+    "category": ,
+    "difficulty": ,
+    "ingredients": ,
+    "quantity": ,
+    "time": ,
+    "portions": , 
+    "rating": , 
+    "steps": 
+},{
+    "title": ,
+    "category": ,
+    "difficulty": ,
+    "ingredients": ,
+    "quantity": ,
+    "time": ,
+    "portions": , 
+    "rating": , 
+    "steps": 
+},{
+    "title": ,
+    "category": ,
+    "difficulty": ,
+    "ingredients": ,
+    "quantity": ,
+    "time": ,
+    "portions": , 
+    "rating": , 
+    "steps": 
+},
+]
