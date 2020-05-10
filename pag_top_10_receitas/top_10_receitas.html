@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Alguma coisa</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <h2 class="header">Top 10 recipes</h2>
+    </div>
+    <div class="container receitas">
+        <!--Imagem à esquerda-->
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_imagem1">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+                <div class="col" id="col_receita_texto1">
+                    <h5 class="titulos_receita">1. <span id="nome_receita1">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas1"></span>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Imagem à direita-->
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_texto2">
+                    <h5 class="titulos_receita">2. <span id="nome_receita2">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas2"></span>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col" id="col_receita_imagem2">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+            </div>
+        </div>
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_imagem3">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+                <div class="col" id="col_receita_texto3">
+                    <h5 class="titulos_receita">3. <span id="nome_receita3">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas3"></span>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_texto4">
+                    <h5 class="titulos_receita">4. <span id="nome_receita4">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas4"></span>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col" id="col_receita_imagem4">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+            </div>
+        </div>
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_imagem5">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+                <div class="col" id="col_receita_texto5">
+                    <h5 class="titulos_receita">5. <span id="nome_receita5">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas5"></span>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_texto6">
+                    <h5 class="titulos_receita">6. <span id="nome_receita6">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas6"></span>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col" id="col_receita_imagem6">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+            </div>
+        </div>
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_imagem7">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+                <div class="col" id="col_receita_texto7">
+                    <h5 class="titulos_receita">7. <span id="nome_receita7">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas7"></span>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_texto8">
+                    <h5 class="titulos_receita">8. <span id="nome_receita8">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas8"></span>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col" id="col_receita_imagem8">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+            </div>
+        </div>
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_imagem9">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+                <div class="col" id="col_receita_texto9">
+                    <h5 class="titulos_receita">9. <span id="nome_receita9">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas9"></span>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container receita_individual">
+            <div class="row" style="height: 100%;">
+                <div class="col" id="col_receita_texto10">
+                    <h5 class="titulos_receita">10. <span id="nome_receita10">Nome da receita</span></h5>
+                    <div class="container_dificuldade_receita">
+                        <h6 class="dificuldade_receita">Dificuldade: <br />
+                            <span class="dificuldade_estrelas" id="dificuldade_estrelas10"></span>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col" id="col_receita_imagem10">
+                    <img src="imagens/receita1.jpeg" class="rounded img-fluid receita_imagem" alt="nada">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
