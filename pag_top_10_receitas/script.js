@@ -21,6 +21,7 @@ function init() {
 
         span_estrela.innerHTML = string_estrela;
     }
+
 }
 
 init();
