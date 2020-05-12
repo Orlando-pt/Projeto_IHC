@@ -1,7 +1,7 @@
 LACTICÍNIOS
 manteiga
 ovo
-leite de vaca
+leite meio gordo
 iogurte
 leite condensado
 gelado
@@ -31,10 +31,9 @@ alho
 batata
 cenoura
 pimento
-manjericão
-salsa
 brócolos
 milho
+courgette
 espinafre
 cogumelo
 gengibre
@@ -80,7 +79,6 @@ clementina
 papaia
 ameixa
 
-
 HIDRATOS DE CARBONO
 arroz
 massa
@@ -102,6 +100,7 @@ pipocas
 massa de tarte
 massa folhada
 massa de pizza
+arroz agulha
 croutons
 pão pita
 basmati
@@ -109,9 +108,12 @@ arroz agulha
 massa para lasanha
 
 ESPECIARIAS & TEMPEROS
+açúcar
 canela
+pimenta preta
 baunilha
 alho em pó
+colorau
 paprica
 orégãos
 cuminho
@@ -121,15 +123,20 @@ noz-moscada
 caril
 açafrão
 salva
+salsa
 cacau
 estrela de anís
 vinho para arroz
 wasabi
+louro
+sal
+pimenta
 
 CARNE
 peito de galinha
 carne moída
 bacon
+peito de pato
 salsicha fresca
 bife
 fiambre
@@ -150,6 +157,8 @@ pato
 fígado
 coelho
 foie gras
+toucinho
+vitela
 
 PEIXE
 atum em lata
@@ -186,8 +195,10 @@ vieira
 sapateira
 
 CONDIMENTOS & ÓLEOS
+azeite
 molho barbecue
 ketchup
+polpa de tomate
 maionese
 mostarda
 mostarda dijon
