@@ -1,0 +1,62 @@
+.imagem_perfil {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    width: 50%;
+    height: 20%;
+    border-radius: 50%;
+}
+
+.perfil_nome {
+    font-size: 1rem;
+    color: rgba(19, 17, 17, 0.637);
+    font-family: "Great Vibes", cursive;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+}
+
+.texto_dados {
+    font-size: 1rem;
+    color: rgba(19, 17, 17, 0.637);
+    font-family: "Great Vibes", cursive;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+}
+
+.estilo_hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.container_receitas_favoritas {
+    position: relative;
+    width: 100%;
+    height: 10%;
+}
+
+.img_receitas_favoritas {
+    width: 100%;
+    height: auto;
+}
+
+.butao_receitas_favoritas {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgba(88, 84, 84, 0.507);
+    color: white;
+    font-size: medium;
+    padding: 1%;
+    border: none;
+    cursor: pointer;
+    border-radius: 5%;
+}
+
+.butao_receitas_favoritas:hover {
+    background-color: black;
+}
