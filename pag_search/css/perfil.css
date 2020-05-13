@@ -3,23 +3,68 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 1rem;
-    width: 50%;
-    height: 20%;
+    border: 1px solid rgb(250, 169, 137);
+    width: 30%;
+    height: 30%;
     border-radius: 50%;
+}
+.imagem_perfil:hover{
+    cursor:pointer;
+}
+#username{
+    text-align:center;
+    font-size: 10px;
+    color: rgb(250, 169, 137);
+}
+#calendar{
+    color: rgb(151, 151, 151);
+    width: 10px !important;
+    height: 10px !important;
+}
+
+#birthday{
+    color: rgb(151, 151, 151);
+    width: 7px !important;
+    height: 7px !important;
+}
+#edit{
+    width: 10px !important;
+    height: 10px !important;
+}
+
+#edit:hover{
+    cursor: pointer;
+}
+
+#bio{
+    padding:0px;
+    border: 0px;
+    margin: 0px;
+    font-size: 15px;
+}
+
+#bdate{
+    padding:0px;
+    border: 0px;
+    margin: 0px;
+    font-size: 12px;
+    color: rgb(250, 169, 137);
 }
 
 .perfil_nome {
+    margin-top: 0.7em;
     font-size: 1rem;
     color: rgba(19, 17, 17, 0.637);
-    font-family: "Great Vibes", cursive;
+    font-family: Arial;
     text-align: center;
     text-shadow: 0 1px 1px #fff;
 }
 
+
 .texto_dados {
     font-size: 1rem;
     color: rgba(19, 17, 17, 0.637);
-    font-family: "Great Vibes", cursive;
+    font-family: Arial;
     text-align: center;
     text-shadow: 0 1px 1px #fff;
 }
@@ -31,32 +76,35 @@
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
-.container_receitas_favoritas {
-    position: relative;
+.perfil_container {
+    display: block;
+    float:left;
     width: 100%;
     height: 10%;
 }
 
-.img_receitas_favoritas {
+.perfil_container_text {
+    display: block;
+    float:right;
+    width: 100%;
+    height: 10%;
+}
+
+.imgs:hover {
+    filter: sepia(70%) saturate(80%) brightness(60%) hue-rotate(180deg);
+    cursor:pointer;
+}
+
+.imgs {
     width: 100%;
     height: auto;
+
 }
 
-.butao_receitas_favoritas {
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: rgba(88, 84, 84, 0.507);
-    color: white;
-    font-size: medium;
-    padding: 1%;
-    border: none;
-    cursor: pointer;
-    border-radius: 5%;
-}
 
-.butao_receitas_favoritas:hover {
-    background-color: black;
-}
+
+/* 
+.img.recente_vis{
+    width: 100%;
+    height: auto;
+} */
