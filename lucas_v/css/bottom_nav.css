@@ -1,25 +1,23 @@
 #bottom_nav {
-    background-color: rgb(235, 235, 235);
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(234, 248, 255);
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 1;
+    height: 3.5em;
 }
 
 #bottom_nav a {
+    margin: 1em;
     float: center;
     display: block;
-    color: #000000;
-}
-
-#bottom_nav a:hover {
-    background: #f1f1f1;
-    color: black;
+    color: #505050;
 }
 
 #bottom_nav a.active {
-    background-color: rgb(87, 87, 87);
-    color: white;
-    padding: 2%;
-    border-radius: 10%;
+    color: #ffd06c;
 }
