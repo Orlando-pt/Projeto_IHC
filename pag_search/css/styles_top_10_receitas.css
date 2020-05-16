@@ -2,6 +2,23 @@
     background-color: rgba(222, 238, 223, 0.562);
     overflow: scroll;
 }*/
+.recipe_container{
+    background-color: rgb(199, 128, 70);
+    margin:10px;
+}
+.recipe_container_right{
+    background-color: rgb(139, 85, 40);
+    margin:10px;
+}
+.n1r{
+    padding: 0;
+    margin:0;
+    text-align: center;
+
+}
+.n1recipe{
+    padding: 30px;
+}
 
 .header {
     color: #111;
@@ -11,26 +28,6 @@
     letter-spacing: -1px;
     line-height: 1;
     text-align: center;
-}
-
-.receitas {
-    width: 100%;
-    height: 100%;
-}
-
-.receita_individual {
-    margin-top: 0.5rem;
-    width: 100%;
-    height: 10rem;
-}
-
-.dificuldade_receita {
-    margin-top: 7%;
-    font-family: "Libre Baskerville", serif;
-    font-size: 1.2rem;
-    text-align: center;
-    color: #7a7c7f;
-    text-shadow: 0 1px 1px #fff;
 }
 
 .receita_imagem {
@@ -43,14 +40,9 @@
 .titulos_receita {
     margin-top: 10%;
     color: rgba(19, 17, 17, 0.637);
-    font-family: "Great Vibes", cursive;
     font-size: large;
     text-align: center;
     text-shadow: 0 1px 1px #fff;
 }
 
-.dificuldade_estrelas {
-    text-align: center;
-    margin-top: 5%;
-    
 }
