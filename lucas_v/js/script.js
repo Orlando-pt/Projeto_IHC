@@ -2,17 +2,18 @@ window.onload = function() {
     window.localStorage.clear();
 }
 
+var filters = [];
+
 function close_card_filter() {
     var array_checked = $('input[name="filter"]:checked').serialize().split('&');
 
     if (array_checked.length > 0) {
-        var checked_filters = [];
 
         for (var i = 0; i < array_checked.length; i++) {
-            checked_filters.push(array_checked[i].substring("filter".length + 1, array_checked[i].length));
+            filters.push(array_checked[i].substring("filter".length + 1, array_checked[i].length));
         }
 
-        console.log(checked_filters);
+        console.log(filters);
 
     } else {
         console.log("No selected filters")
@@ -96,6 +97,26 @@ function getIngredients() {
         ingredients = ["azeite", "cebola", "alho", "vitela", "vinho branco", "orégãos", "sal", "pimenta", "tomate", "polpa de tomate", "manteiga", "farinha", "leite meio gordo", "massa para lasanha", "mozzarela", "manjericão"];
     }
 
+    if (ingredients[0] == "all") {
+        $('#search').val("");
+
+        var aa = document.getElementsByTagName("input");
+        for (var i = 0; i < aa.length; i++) {
+            if (aa[i].type == 'checkbox')
+                aa[i].checked = true;
+        }
+        var aa = document.getElementsByTagName("button");
+        for (var i = 0; i < aa.length; i++) {
+            if (aa[i].innerHTML == 'Done')
+                aa[i].click();
+        }
+
+    }
+    if (ingredients[0] == "all_recepies") {
+        ingredients = ["bife de vaca", "queijo", "pão de forma", "salsicha", "linguiça", "fiambre", "sal", "pimenta", "azeite", "alho", "cebola", "fermento", "pão ralado", "farinha", "soja granulada", "salsa", "oregãos", "sal", "tomate", "açúcar", "manjericão", "massa", "ovo", "açúcar", "óleo", "farinha", "leite meio-gordo", "chocolate em pó", "fermento em pó", "batata", "azeite", "bacalhau", "manteiga", "farinha", "leite meio-gordo", "natas", "sal", "noz-moscada", "pimenta", "limão", "alho", "cebelha", "batata", "azeite", "bacalhau", "manteiga", "farinha", "leite meio-gordo", "natas", "sal", "noz-moscada", "pimenta", "limão", "alho", "cebelha", "marisco variado", "cebola", "alho", "azeite", "tomate", "coentros", "água", "sal", "arroz", "limão", "coxas de frango", "sal", "pimenta", "limão", "alho", "cenoura", "orégãos", "vinho branco", "azeite", "cuscuz", "banana", "limão", "chocolate preto", "morangos", "coco ralado", "manteiga de amendoim", "granola", "ovo", "sal", "grão", "brócolo", "cebola roxa", "pimentos", "atum em lata", "pimenta", "azeite", "vinagre", "salsa", "água", "vinho tinto", "chouriço", "toucinho", "louro", "peito de pato", "sal", "azeite", "cebola", "alho", "polpa de tomate", "arroz agulha", "pimenta preta", "colorau", "farinha", "açúcar", "fermento em pó", "sal", "ovo", "leite meio gordo", "manteiga", "azeite", "cebola", "alho", "vitela", "vinho branco", "orégãos", "sal", "pimenta", "tomate", "polpa de tomate", "manteiga", "farinha", "leite meio gordo", "massa para lasanha", "mozzarela", "manjericão", "salmão", "sal", "pimenta", "alho em pó", "limão", "cenoura", "azeite", "courgette", "cogumelo", "massa", "espinafre", "ananás"];
+
+    }
+
     // gets the selected cuisine
     var selected_option = $('#cuisine option:selected').filter(':selected').text();
     console.log(selected_option);
@@ -123,7 +144,7 @@ function getIngredients() {
         for (var i = 0; i < data.length; i++) { // for each recepie 
 
             var recepie = data[i]; // holds each recepie's data
-
+            console.log(recepie.category);
             var has_all_ings = true
 
             var ings_arr = [];
@@ -148,9 +169,15 @@ function getIngredients() {
                 valid_recepies.push(recepie);
             }
         }
-        for (var recepie = 0; recepie < valid_recepies.length; recepie++) {
-            console.log("adding valid recepie");
-            localStorage.setItem(recepie.toString(), JSON.stringify(valid_recepies[recepie]));
+        for (var filter = 0; filter < filters.length; filter++) {
+
+
+            for (var recepie = 0; recepie < valid_recepies.length; recepie++) {
+                if (valid_recepies[recepie].category == filters[filter]) {
+                    console.log("adding valid recepie");
+                    localStorage.setItem(recepie.toString(), JSON.stringify(valid_recepies[recepie]));
+                }
+            }
         }
         window.location.replace("recepie_landing.html");
 
