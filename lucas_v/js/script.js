@@ -152,8 +152,8 @@ function getIngredients() {
             console.log("adding valid recepie");
             localStorage.setItem(recepie.toString(), JSON.stringify(valid_recepies[recepie]));
         }
-        console.log("getting valid recepie");
-        console.log(localStorage.getItem("0"));
+        window.location.replace("recepie_landing.html");
+
     });
 
 

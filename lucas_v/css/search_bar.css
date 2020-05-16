@@ -506,7 +506,7 @@ body {
 
 .s003 form .inner-form .input-field.first-wrap .choices__list--dropdown .choices__item--selectable.is-highlighted {
     background: #fff;
-    color: #253E66;
+    color: rgb(255, 203, 199);
 }
 
 .s003 form .inner-form .input-field.first-wrap .choices__list--dropdown .choices__item {
@@ -530,7 +530,7 @@ body {
     color: #fff;
     border: 0;
     cursor: pointer;
-    background: #253E66;
+    background: rgb(255, 203, 199);
     transition: all .2s ease-out, color .2s ease-out;
 }
 
