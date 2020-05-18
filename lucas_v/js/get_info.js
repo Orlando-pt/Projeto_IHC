@@ -12,8 +12,10 @@ $(document).ready(function() {
     };
 
     try {
+        console.log("inside try");
         var has_appended = false;
         for (var i = 0; i < localStorage.length; i++) {
+
             var titulo = JSON.parse(localStorage.getItem(localStorage.key(i))).title.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             var keys = Object.keys(dict);
             for (var key = 0; key < keys.length; key++) {

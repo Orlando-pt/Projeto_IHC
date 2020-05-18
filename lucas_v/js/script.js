@@ -169,14 +169,20 @@ function getIngredients() {
                 valid_recepies.push(recepie);
             }
         }
-        for (var filter = 0; filter < filters.length; filter++) {
-
-
-            for (var recepie = 0; recepie < valid_recepies.length; recepie++) {
-                if (valid_recepies[recepie].category == filters[filter]) {
-                    console.log("adding valid recepie");
-                    localStorage.setItem(recepie.toString(), JSON.stringify(valid_recepies[recepie]));
+        console.log("flen " + filters.length);
+        if (filters.length != 0) {
+            for (var filter = 0; filter < filters.length; filter++) {
+                for (var recepie = 0; recepie < valid_recepies.length; recepie++) {
+                    if (valid_recepies[recepie].category == filters[filter]) {
+                        console.log("adding valid recepie");
+                        localStorage.setItem(recepie.toString(), JSON.stringify(valid_recepies[recepie]));
+                    }
                 }
+            }
+        } else {
+            for (var recepie = 0; recepie < valid_recepies.length; recepie++) {
+                console.log("adding valid recepie");
+                localStorage.setItem(recepie.toString(), JSON.stringify(valid_recepies[recepie]));
             }
         }
         window.location.replace("recepie_landing.html");
