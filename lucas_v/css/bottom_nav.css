@@ -3,7 +3,7 @@
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(234, 248, 255);
+    background-color: rgb(243, 205, 190);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -14,9 +14,9 @@
 
 #bottom_nav a {
     margin: 1em;
-    color: #505050;
+    color: #707070;
 }
 
 #bottom_nav a.active {
-    color: #ffd06c;
+    color: #ffffff;
 }

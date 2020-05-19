@@ -1,6 +1,6 @@
 window.onload = function() {
 
-    $('#first').click();
+    $('#first').trigger('click');
 }
 
 function openCity(evt, cityName) {
