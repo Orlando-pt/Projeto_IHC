@@ -100,21 +100,23 @@ function getIngredients() {
     if (ingredients[0] == "all") {
         $('#search').val("");
 
-        var aa = document.getElementsByTagName("input");
+        var aa = document.getElementsByClassName("cat");
         for (var i = 0; i < aa.length; i++) {
             if (aa[i].type == 'checkbox')
                 aa[i].checked = true;
         }
-        var aa = document.getElementsByTagName("button");
+        var aa = document.getElementsByClassName("catbtn");
         for (var i = 0; i < aa.length; i++) {
+
             if (aa[i].innerHTML == 'Done')
                 aa[i].click();
         }
 
-    }
-    if (ingredients[0] == "all_recepies") {
         ingredients = ["bife de vaca", "queijo", "pão de forma", "salsicha", "linguiça", "fiambre", "sal", "pimenta", "azeite", "alho", "cebola", "fermento", "pão ralado", "farinha", "soja granulada", "salsa", "oregãos", "sal", "tomate", "açúcar", "manjericão", "massa", "ovo", "açúcar", "óleo", "farinha", "leite meio-gordo", "chocolate em pó", "fermento em pó", "batata", "azeite", "bacalhau", "manteiga", "farinha", "leite meio-gordo", "natas", "sal", "noz-moscada", "pimenta", "limão", "alho", "cebelha", "batata", "azeite", "bacalhau", "manteiga", "farinha", "leite meio-gordo", "natas", "sal", "noz-moscada", "pimenta", "limão", "alho", "cebelha", "marisco variado", "cebola", "alho", "azeite", "tomate", "coentros", "água", "sal", "arroz", "limão", "coxas de frango", "sal", "pimenta", "limão", "alho", "cenoura", "orégãos", "vinho branco", "azeite", "cuscuz", "banana", "limão", "chocolate preto", "morangos", "coco ralado", "manteiga de amendoim", "granola", "ovo", "sal", "grão", "brócolo", "cebola roxa", "pimentos", "atum em lata", "pimenta", "azeite", "vinagre", "salsa", "água", "vinho tinto", "chouriço", "toucinho", "louro", "peito de pato", "sal", "azeite", "cebola", "alho", "polpa de tomate", "arroz agulha", "pimenta preta", "colorau", "farinha", "açúcar", "fermento em pó", "sal", "ovo", "leite meio gordo", "manteiga", "azeite", "cebola", "alho", "vitela", "vinho branco", "orégãos", "sal", "pimenta", "tomate", "polpa de tomate", "manteiga", "farinha", "leite meio gordo", "massa para lasanha", "mozzarela", "manjericão", "salmão", "sal", "pimenta", "alho em pó", "limão", "cenoura", "azeite", "courgette", "cogumelo", "massa", "espinafre", "ananás"];
-
+        for (var i = 0; i < ingredients.length; i++) {
+            $('#search').val($('#search').val() + ingredients[i] + ", ");
+        }
+        console.log("ola");
     }
 
     // gets the selected cuisine
