@@ -1,52 +1,38 @@
-window.onload = function() {
-    window.localStorage.clear();
-}
-
 var filters = [];
+var ingredients = [];
 
-function close_card_filter() {
-    var array_checked = $('input[name="filter"]:checked').serialize().split('&');
+$(document).ready(function() {
+    window.localStorage.clear();
 
-    if (array_checked.length > 0) {
+    responsive_checkbox();    
+});
 
-        for (var i = 0; i < array_checked.length; i++) {
-            filters.push(array_checked[i].substring("filter".length + 1, array_checked[i].length));
+function responsive_checkbox() {
+    // Para os filtros
+    $(".customFilter").change(function() {
+        if (this.checked) {
+            filters.push($(this).val());
+        } else {
+            filters = arrayRemove(filters, $(this).val());
         }
-
-        console.log(filters);
-
-    } else {
-        console.log("No selected filters")
-    }
-
-}
-
-
-
-function close_card(button_id) {
-    // para ir buscar o nome da categoria que é o value do botão de fechar
-    var nome_cat = $('#' + button_id).val()
-
-    var array_checked = [];
-    $('input[name=\"' + nome_cat + '\"]:checked').each(function() {
-        var checked_ing = (this.checked ? $(this).val() : "");
-        array_checked.push(checked_ing);
     });
 
-    if (array_checked.length > 0) {
-        console.log(array_checked);
-
-        for (var i = 0; i < array_checked.length; i++) {
-            $('#search').val($('#search').val() + array_checked[i] + ", ");
+    // Para o resto das checkboxes
+    $(".custom").change(function() {
+        if (this.checked) {
+            ingredients.push($(this).val());
+        } else {
+            ingredients = arrayRemove(ingredients, $(this).val());
         }
+    });
+}
 
-    } else {
-        console.log("No selected check boxes")
-    }
+function arrayRemove(arr, value) {
+    return arr.filter(function(ele){ return ele != value; });
 }
 
 // Get's the search bar's text
-var ingredients = [];
+
 
 function getIngredients() {
     var ings = document.getElementById("search").value;
@@ -157,7 +143,7 @@ function getIngredients() {
             console.log(ings_arr);
             for (var x = 0; x < ings_arr.length; x++) { // for each ingredient from recepie
                 /*we want to know if all of these ingredients match the one's we searched for
-                if they all match the recepie is passed on to the user*/
+                //if they all match the recepie is passed on to the user*/
 
                 if (search_ings.includes(ings_arr[x]) == false) {
                     has_all_ings = false;
@@ -190,9 +176,5 @@ function getIngredients() {
         window.location.replace("recepie_landing.html");
 
     });
-
-
-
-
-
 }
+
