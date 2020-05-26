@@ -106,14 +106,5 @@ function openCity(evt, cityName) {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(cityName).style.display = "block";
-<<<<<<< HEAD:lucas_v/js/recipe.js
     evt.target.className += " active";
-=======
-    evt.currentTarget.className += " active";
-}
-
-
-function previous_page() {
-    window.location.replace('../recepie_landing.html');
->>>>>>> 6a7f0b5e9cf8417a71fbbd5809ab20870da071aa:js/recipe.js
 }
