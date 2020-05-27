@@ -1,21 +1,21 @@
 $(document).ready(function() {
     $('#first').trigger('click');
 
-    display_recipe_info(window.location.search.substring(1).split("=")[1]);          // goes to the url and checks wich param has been sent
+    display_recipe_info(window.location.search.substring(1).split("=")[1]); // goes to the url and checks wich param has been sent
 });
 
 function display_recipe_info(recipe_name) {
     recipe_name = recipe_name.split("_").join(" ");
-    $.getJSON("https://api.jsonbin.io/b/5ebad993a47fdd6af162107f/2", function( data ) {
+    $.getJSON("https://api.jsonbin.io/b/5ebad993a47fdd6af162107f/2", function(data) {
 
         var current_recipe;
         for (var i = 0; i < data.length; i++) {
             current_recipe = data[i];
             console.log(current_recipe);
-            if (replace_accent(current_recipe.title).toUpperCase() === recipe_name.toUpperCase()) {              
+            if (replace_accent(current_recipe.title).toUpperCase() === recipe_name.toUpperCase()) {
                 if (current_recipe.ingredients.length != current_recipe.quantity.length)
                     alert("Erro nas quantidades");
-                change_text(current_recipe);                            // change text on html
+                change_text(current_recipe); // change text on html
                 return;
             }
         }
@@ -36,7 +36,7 @@ function change_text(recipe) {
     $("#page_title").text(recipe.title);
     $("#p_title").text(recipe.title);
     $("#p_preview").text(recipe.preview);
-    $("#img_recipe").attr("src", "./img/panquecas.jpg");            // TEM DE SER ALTERADO
+    $("#img_recipe").attr("src", "./img/panquecas.jpg"); // TEM DE SER ALTERADO
     // $("#img_recipe").attr("src", recipe.imagem);
 
     // Add the ingredients
@@ -47,7 +47,7 @@ function change_text(recipe) {
     $("#London").append("</br>");
     $("#London").append("</br>");
     $("#London").append("</br>");
-    
+
     // Now adding steps
     $("#Paris").append("</br>");
     for (i = 0; i < recipe.steps.length; i++) {
@@ -59,24 +59,29 @@ function change_text(recipe) {
 }
 
 function append_to_London(product, quantity) {
+
+    // if history = recepie_landing
+    // if in LS else
+
+    //else
     var html_code = "<div class=\"row\">" +
-                        "<div class=\"col-6\">" +
-                            "<p style=\"float:left; margin-left: 20%;\">" + product + "</p>" +
-                        "</div>" +
-                        "<div class=\"col-6\">" +
-                            "<p style=\"float: right; margin-right: 20%;\">" + quantity + "</p>" +
-                        "</div>" + 
-                    "</div>";
+        "<div class=\"col-6\">" +
+        "<p style=\"float:left; margin-left: 20%;\">" + product + "</p>" +
+        "</div>" +
+        "<div class=\"col-6\">" +
+        "<p style=\"float: right; margin-right: 20%;\">" + quantity + "</p>" +
+        "</div>" +
+        "</div>";
 
     $("#London").append(html_code);
 }
 
 function append_to_Paris(step_number, step_description) {
     var html_code = "<div class=\"row\">" +
-                        "<p class=\"mx-auto steps\" style=\"color:rgb(255, 190, 137)\">Passo " + step_number + "</p>" +
-                        "<p class=\"mx-auto steps\">" + step_description + "</p>" +
-                    "</div>";
-    
+        "<p class=\"mx-auto steps\" style=\"color:rgb(255, 190, 137)\">Passo " + step_number + "</p>" +
+        "<p class=\"mx-auto steps\">" + step_description + "</p>" +
+        "</div>";
+
     $("#Paris").append(html_code);
 }
 
