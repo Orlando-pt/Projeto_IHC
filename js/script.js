@@ -4,7 +4,7 @@ var ingredients = [];
 $(document).ready(function() {
     window.localStorage.clear();
 
-    responsive_checkbox();    
+    responsive_checkbox();
 });
 
 function responsive_checkbox() {
@@ -28,7 +28,7 @@ function responsive_checkbox() {
 }
 
 function arrayRemove(arr, value) {
-    return arr.filter(function(ele){ return ele != value; });
+    return arr.filter(function(ele) { return ele != value; });
 }
 
 // Get's the search bar's text
@@ -123,16 +123,17 @@ function getIngredients() {
     }
 
     var valid_recepies = []
+    var valid_inc_recepies = [];
+
     readJSJON("https://api.jsonbin.io/b/5ebad993a47fdd6af162107f/2", function(text) {
         var search_ings = ingredients;
 
         var data = JSON.parse(text); // JSON data from server (JSONbin.io)
 
-
         for (var i = 0; i < data.length; i++) { // for each recepie 
+            console.log(data[i].ingredients);
 
             var recepie = data[i]; // holds each recepie's data
-            console.log(recepie.category);
             var has_all_ings = true
 
             var ings_arr = [];
@@ -140,41 +141,85 @@ function getIngredients() {
             for (var x = 0; x < recepie.ingredients.length; x++) {
                 ings_arr.push(recepie.ingredients[x]);
             }
-            console.log(ings_arr);
             for (var x = 0; x < ings_arr.length; x++) { // for each ingredient from recepie
                 /*we want to know if all of these ingredients match the one's we searched for
-                //if they all match the recepie is passed on to the user*/
+                if they all match the recepie is passed on to the user*/
 
                 if (search_ings.includes(ings_arr[x]) == false) {
                     has_all_ings = false;
                 }
 
             }
-            console.log(has_all_ings);
-
 
             if (has_all_ings) {
                 valid_recepies.push(recepie);
             }
+
+
+            var counter = 0;
+            has_all_ings = false;
+
+            // recepies with more than 3 ingredients
+            for (var x = 0; x < ings_arr.length; x++) { // for each ingredient from recepie
+                /*we want to know if all of these ingredients match the one's we searched for
+                if they all match the recepie is passed on to the user*/
+
+                if (search_ings.includes(ings_arr[x])) {
+                    counter++;
+                    if (counter == 3) {
+                        has_all_ings = true;
+                    }
+
+                }
+
+            }
+
+            if (has_all_ings) {
+                console.log("pushing " + recepie.title);
+                valid_inc_recepies.push(recepie);
+            }
+
         }
-        console.log("flen " + filters.length);
+
         if (filters.length != 0) {
             for (var filter = 0; filter < filters.length; filter++) {
                 for (var recepie = 0; recepie < valid_recepies.length; recepie++) {
                     if (valid_recepies[recepie].category == filters[filter]) {
-                        console.log("adding valid recepie");
-                        localStorage.setItem(recepie.toString(), JSON.stringify(valid_recepies[recepie]));
+                        localStorage.setItem(recepie.toString() + "/INC", JSON.stringify(valid_recepies[recepie]));
                     }
                 }
+
+                for (var recepie = 0; recepie < valid_inc_recepies.length; recepie++) {
+                    if (valid_inc_recepies[recepie].category == filters[filter]) {
+                        for (var r = 0; r < valid_recepies.length; r++) {
+                            if (!valid_inc_recepies.includes(valid_recepies[r])) {
+                                localStorage.setItem(recepie.toString() + "/COMP", JSON.stringify(valid_inc_recepies[recepie]));
+                            }
+                        }
+                    }
+                }
+
             }
         } else {
             for (var recepie = 0; recepie < valid_recepies.length; recepie++) {
-                console.log("adding valid recepie");
-                localStorage.setItem(recepie.toString(), JSON.stringify(valid_recepies[recepie]));
+                console.log(valid_recepies[recepie].title + " HAS ALL INGREDIENTS FROM SEARCH");
+                localStorage.setItem(recepie.toString() + "/INC", JSON.stringify(valid_recepies[recepie]));
+            }
+            var includes = false;
+            for (var recepie = 0; recepie < valid_inc_recepies.length; recepie++) {
+                console.log(valid_inc_recepies[recepie].title + " HAS incomplete INGREDIENTS FROM SEARCH");
+                for (var r = 0; r < valid_recepies.length; r++) {
+                    if (valid_recepies.includes(valid_inc_recepies[recepie])) {
+                        includes = true;
+                    }
+                }
+                if (!includes) {
+                    console.log(valid_recepies[recepie] + " IS NOT INCLUDED IN HAS ALL, LETS ADD IT TO INCOMPLETE");
+                    localStorage.setItem(recepie.toString() + "/COMP", JSON.stringify(valid_inc_recepies[recepie]));
+                }
             }
         }
         window.location.assign("recepie_landing.html");
 
     });
 }
-
