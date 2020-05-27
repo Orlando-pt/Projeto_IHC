@@ -4,7 +4,7 @@ var ingredients = [];
 $(document).ready(function() {
     window.localStorage.clear();
 
-    responsive_checkbox();
+    responsive_checkbox();    
 });
 
 function responsive_checkbox() {
@@ -28,7 +28,7 @@ function responsive_checkbox() {
 }
 
 function arrayRemove(arr, value) {
-    return arr.filter(function(ele) { return ele != value; });
+    return arr.filter(function(ele){ return ele != value; });
 }
 
 // Get's the search bar's text
@@ -223,3 +223,4 @@ function getIngredients() {
 
     });
 }
+

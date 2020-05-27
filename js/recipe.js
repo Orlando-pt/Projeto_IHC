@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#first').trigger('click');
 
-    display_recipe_info(window.location.search.substring(1).split("=")[1]); // goes to the url and checks wich param has been sent
+    display_recipe_info(window.location.search.substring(1).split("&")[0].split("=")[1]); // goes to the url and checks wich param has been sent
 });
 
 function display_recipe_info(recipe_name) {
@@ -60,18 +60,31 @@ function change_text(recipe) {
 
 function append_to_London(product, quantity) {
 
-    // if history = recepie_landing
-    // if in LS else
-
-    //else
-    var html_code = "<div class=\"row\">" +
-        "<div class=\"col-6\">" +
-        "<p style=\"float:left; margin-left: 20%;\">" + product + "</p>" +
-        "</div>" +
-        "<div class=\"col-6\">" +
-        "<p style=\"float: right; margin-right: 20%;\">" + quantity + "</p>" +
-        "</div>" +
-        "</div>";
+    // caso a página anterior tenha sido a top_10_receitas...
+    if (window.location.search.substring(1).split("&")[1].split("=")[1] === "top10") {
+        var html_code = "<div class=\"row\">" +
+            "<div class=\"col-6\">" +
+            "<p style=\"float:left; margin-left: 20%;\">" + product + "</p>" +
+            "</div>" +
+            "<div class=\"col-6\">" +
+            "<p style=\"float: right; margin-right: 20%;\">" + quantity + "</p>" +
+            "</div>" +
+            "</div>";
+    } else if(window.location.search.substring(1).split("&")[1].split("=")[1] === "recipe_search" ) {                                            // caso tenha sido através da pesquisa de receitas...
+        var html_code = "<div class=\"row\">" +
+            "<div class=\"col-1\">" +
+            "<i class=\"fas fa-times\"></i>" + 
+            "</div>" +
+            "<div class=\"col-5\">" +
+            "<p style=\"float:left; margin-left: 5%;\">" + product + "</p>" +
+            "</div>" +
+            "<div class=\"col-6\">" +
+            "<p style=\"float: right; margin-right: 20%;\">" + quantity + "</p>" +
+            "</div>" +
+            "</div>";
+    } else {
+        alert("Unkown previous page");
+    }
 
     $("#London").append(html_code);
 }
