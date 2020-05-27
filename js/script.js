@@ -173,7 +173,7 @@ function getIngredients() {
                 localStorage.setItem(recepie.toString(), JSON.stringify(valid_recepies[recepie]));
             }
         }
-        window.location.replace("recepie_landing.html");
+        window.location.assign("recepie_landing.html");
 
     });
 }
