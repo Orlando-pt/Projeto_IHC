@@ -36,8 +36,8 @@ function change_text(recipe) {
     $("#page_title").text(recipe.title);
     $("#p_title").text(recipe.title);
     $("#p_preview").text(recipe.preview);
-    $("#img_recipe").attr("src", "./img/panquecas.jpg"); // TEM DE SER ALTERADO
-    // $("#img_recipe").attr("src", recipe.imagem);
+    //$("#img_recipe").attr("src", "./img/panquecas.jpg"); // TEM DE SER ALTERADO
+    $("#img_recipe").attr("src", recipe.image_path);
 
     // Add the ingredients
     for (i = 0; i < recipe.ingredients.length; i++) {
