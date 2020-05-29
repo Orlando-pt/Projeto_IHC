@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 function display_recipe_info(recipe_name) {
     recipe_name = recipe_name.split("_").join(" ");
-    $.getJSON("https://api.jsonbin.io/b/5ebad993a47fdd6af162107f/2", function(data) {
+    $.getJSON("https://api.jsonbin.io/b/5ecffbdf7741ef56a5638e93", function(data) {
 
         var current_recipe;
         for (var i = 0; i < data.length; i++) {

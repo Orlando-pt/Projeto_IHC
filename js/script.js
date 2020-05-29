@@ -125,7 +125,7 @@ function getIngredients() {
     var valid_recepies = []
     var valid_inc_recepies = [];
 
-    readJSJON("https://api.jsonbin.io/b/5ebad993a47fdd6af162107f/2", function(text) {
+    readJSJON("https://api.jsonbin.io/b/5ecffbdf7741ef56a5638e93", function(text) {
         var search_ings = ingredients;
 
         var data = JSON.parse(text); // JSON data from server (JSONbin.io)
