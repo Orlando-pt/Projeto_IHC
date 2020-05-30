@@ -5,7 +5,10 @@ $(document).ready(function() {
 
     ingredients = localStorage.getItem("ingredientes_disponiveis");
 
-    display_recipe_info(window.location.search.substring(1).split("&")[0].split("=")[1]); // goes to the url and checks wich param has been sent
+    var recipe = window.location.search.substring(1).split("&")[0].split("=")[1];
+    // Adicionar esta receita ao localStorage nas receitas recentes
+
+    display_recipe_info(recipe);    
 });
 
 function display_recipe_info(recipe_name) {
@@ -19,6 +22,10 @@ function display_recipe_info(recipe_name) {
             if (replace_accent(current_recipe.title).toUpperCase() === recipe_name.toUpperCase()) {
                 if (current_recipe.ingredients.length != current_recipe.quantity.length)
                     alert("Erro nas quantidades");
+                
+                
+                add_to_recent_viewed(i);         // adicionar a visto recentemente
+                
                 change_text(current_recipe); // change text on html
                 return;
             }
@@ -137,3 +144,75 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.target.className += " active";
 }
+
+function add_to_recent_viewed(index) {
+    var array_receitas = JSON.parse(localStorage.getItem("receitas_recentes"));
+
+    if (array_receitas == null) {
+        array_receitas = [index];
+    } else {
+        if (array_receitas.includes(index)) {              // se a receita já
+            array_receitas = array_move(array_receitas, array_receitas.indexOf(index), 0);          // move o elemento para a primeira posição do array
+        } else {
+            if (array_receitas.length >= 10)          // permite apenas o histórico relativo a 10 receitas
+                array_receitas.pop();
+        
+            array_receitas.unshift(index);
+        }
+    }
+
+    localStorage.setItem("receitas_recentes", JSON.stringify(array_receitas));
+}
+
+/*
+function add_to_recent_viewed(recipe, index) {
+    var array_receitas = JSON.parse(localStorage.getItem("receitas_recentes"));
+
+    if (array_receitas == null) {
+        array_receitas = [[recipe, index]];
+    } else {
+        if (arr_contain(array_receitas, recipe)) {              // se a receita já
+            array_receitas = array_move(array_receitas, this.arr_index(array_receitas, recipe), 0);          // move o elemento para a primeira posição do array
+        } else {
+            if (array_receitas.length >= 10)          // permite apenas o histórico relativo a 10 receitas
+                array_receitas.pop();
+        
+            array_receitas.unshift([recipe, index]);
+        }
+    }
+
+    localStorage.setItem("receitas_recentes", JSON.stringify(array_receitas));
+}*/
+
+function array_move(arr, old_index, new_index) {
+    if (new_index >= arr.length) {
+        var k = new_index - arr.length + 1;
+        while (k--) {
+            arr.push(undefined);
+        }
+    }
+    arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+    return arr; // for testing
+};
+/*
+function arr_index(arr, recipe) {
+    var current_index;
+    for (var i = 0; i < arr.length; i++) {
+        current_index = arr[i];
+        if (current_index.includes(recipe))
+            return i;
+    }
+
+    return null;
+}
+
+function arr_contain(arr, recipe) {
+    var current_index;
+    for (var i = 0; i < arr.length; i++) {
+        current_index = arr[i];
+        if (current_index.includes(recipe))
+            return true;
+    }
+
+    return false;
+}*/

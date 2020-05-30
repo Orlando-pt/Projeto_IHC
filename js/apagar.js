@@ -43,7 +43,7 @@ function make_search() {
 
     if (localStorage.getItem("receitas") != null)
         localStorage.removeItem("receitas");
-        
+
     console.log(filters);
     console.log(ingredients);
 
@@ -72,8 +72,8 @@ function make_search() {
             }
         });
 
-        if (recipes.length > 15)            // se existirem mais de 15 receitas a dar match
-            recipes = recipes.slice(0, 14);           // então retiramos o subarray com as primeiras 15 e ignoramos o resto
+        if (recipes.length > 10)            // se existirem mais de 10 receitas a dar match
+            recipes = recipes.slice(0, 10);           // então retiramos o subarray com as primeiras 10 e ignoramos o resto
 
         
         localStorage.setItem("receitas" , JSON.stringify(recipes));
