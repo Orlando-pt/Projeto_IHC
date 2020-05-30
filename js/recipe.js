@@ -9,11 +9,19 @@ $(document).ready(function() {
 
     add_favorites();
 
-    var recipe = window.location.search.substring(1).split("&")[0].split("=")[1];
-    // Adicionar esta receita ao localStorage nas receitas recentes
-
-    display_recipe_info(recipe);    
+    display_recipe_info(window.location.search.substring(1).split("&")[0].split("=")[1]);
+    
 });
+
+function fav_or_not(index) {
+    var fav_recipes = JSON.parse(localStorage.getItem("receitas_favoritas"));
+
+    if (fav_recipes != null) {
+        console.log(recipe_index);
+        if (fav_recipes.includes(index))
+            $("#Chinatown").toggleClass('fa-heart fa-heart-broken');
+    }
+}
 
 function add_favorites() {
     // <i class="fas fa-heart-broken"></i>    <i class="fas fa-heart"></i>
@@ -55,6 +63,8 @@ function display_recipe_info(recipe_name) {
                 
                 recipe_index = i;                 // variável global
                 add_to_recent_viewed(i);         // adicionar a visto recentemente
+
+                fav_or_not(i);                   // verificar se já se encontra nos favoritos
                 
                 change_text(current_recipe); // change text on html
                 return;

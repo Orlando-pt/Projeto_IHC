@@ -1,13 +1,6 @@
 $(document).ready(function () {
     show_recent_recipes();
 
-    $(".titulos_receita").click(function(event) {
-        click_recipe_text(event);
-    });
-
-    $(".receita_imagem").click(function(event) {
-        click_recipe_id(event);
-    });
 });
 
 function show_recent_recipes() {
