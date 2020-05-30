@@ -1,15 +1,45 @@
 
 var ingredients;
+var recipe_index;
+
 $(document).ready(function() {
     $('#first').trigger('click');
 
     ingredients = localStorage.getItem("ingredientes_disponiveis");
+
+    add_favorites();
 
     var recipe = window.location.search.substring(1).split("&")[0].split("=")[1];
     // Adicionar esta receita ao localStorage nas receitas recentes
 
     display_recipe_info(recipe);    
 });
+
+function add_favorites() {
+    // <i class="fas fa-heart-broken"></i>    <i class="fas fa-heart"></i>
+    $("#bt_adicionar_favoritos").click(function() {
+        var fav_recipes = JSON.parse(localStorage.getItem("receitas_favoritas"));
+
+        if (fav_recipes == null) {
+            fav_recipes = [recipe_index];
+            $("#Chinatown").toggleClass('fa-heart fa-heart-broken');                // muda o símbolo
+        } else {
+            if (fav_recipes.includes(recipe_index)) {
+                fav_recipes = arrayRemove(fav_recipes, recipe_index);
+                $("#Chinatown").toggleClass('fa-heart-broken fa-heart');
+            } else {
+                fav_recipes.push(recipe_index);
+                $("#Chinatown").toggleClass('fa-heart fa-heart-broken');
+            }
+        }
+
+        localStorage.setItem("receitas_favoritas", JSON.stringify(fav_recipes));
+    })
+}
+
+function arrayRemove(arr, value) {
+    return arr.filter(function(ele){ return ele != value; });
+}
 
 function display_recipe_info(recipe_name) {
     recipe_name = recipe_name.split("_").join(" ");
@@ -23,7 +53,7 @@ function display_recipe_info(recipe_name) {
                 if (current_recipe.ingredients.length != current_recipe.quantity.length)
                     alert("Erro nas quantidades");
                 
-                
+                recipe_index = i;                 // variável global
                 add_to_recent_viewed(i);         // adicionar a visto recentemente
                 
                 change_text(current_recipe); // change text on html
