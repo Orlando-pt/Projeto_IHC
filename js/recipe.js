@@ -150,10 +150,10 @@ function append_to_Paris(step_number, step_description) {
 }
 
 function check_ingredient(product) {
-    if (!ingredients.includes(product)) 
-        return "<i class=\"fas fa-times\"></i>";
-    else
+    if (ingredients.includes(product)) 
         return "<i class=\"fas fa-check\"></i>";
+    else
+        return "<i class=\"fas fa-times\"></i>";
 }
 
 function replace_accent(text) {

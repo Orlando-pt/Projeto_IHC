@@ -5,6 +5,7 @@ $(document).ready(function () {
     
     console.log(receitas);
     console.log(ingredients);
+    console.log(JSON.parse(localStorage.getItem("filtros")));
 
     load_receitas(receitas, ingredients);
 });
@@ -16,14 +17,16 @@ function load_receitas(receitas, ingredients) {
         var index_recipe;
         for (var i = 0; i < receitas.length; i++) {
             index_recipe = receitas[i][0];
+            percentage = [receitas[i][1], receitas[i][2]];
+
             console.log(data[index_recipe]);
-            append_recipe(data[index_recipe]);
+            append_recipe(data[index_recipe], percentage);
         }
 
     });
 }
 
-function append_recipe(recipe) {                                                                        // onclick="redirect(this.id)"
+function append_recipe(recipe, percentage) {                                                                        // onclick="redirect(this.id)"
     var html_code = '<a  href=' + ''.concat('recipe.html?param1=', recipe.title.split(" ").join("_"), '&param2=recipe_search') + '>' +
     '<div class="container" style="padding: 6%; padding-top: 0%;">' + 
         '<div class="row" style="box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);">' + 
@@ -33,6 +36,7 @@ function append_recipe(recipe) {                                                
                 '</div>' + 
                 '<div class="row " style="word-break:break-all;padding:5%; display: flex; flex-wrap: nowrap; flex-direction: row; justify-content: space-evenly; background:rgb(255, 190, 69);">' + 
                     '<p style="margin:initial;"><i class=" far fa-clock "></i><span id="time"> 45</span> mins</p> <p id="estrelas" style="margin:initial;">' + display_evaluation(5) + '</p>' + // caso se tivesse colocado avaliação no json
+                    '<p style="margin:initial;">' + display_percentage(percentage) + '</p>' +
                 '</div>' + 
                 '<div class="row justify-content-center img_div" style="padding: 5%; box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15); background: #E3DFD7;">' + 
                     '<img id="imagem" src="' + recipe.image_path + '" style="width: 100%; height: 100%;cursor:pointer;">' + 
@@ -43,6 +47,10 @@ function append_recipe(recipe) {                                                
     '</a>';
 
     $('#inc').append(html_code);
+}
+
+function display_percentage(percentage) {
+    return ''.concat((percentage[0] * percentage[1]).toString(), "/", percentage[1].toString())
 }
 
 function replace_accent(text) {

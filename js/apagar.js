@@ -2,25 +2,69 @@ var filters = [];
 var ingredients = [];
 
 $(document).ready(function() {
-    responsive_checkbox();    
+    responsive_checkbox();
+    
+    clear_storage();
 });
+
+function clear_storage() {
+    if (window.location.search == "") {
+        var firstTime = localStorage.getItem("primeira_vez");
+        
+        if(!firstTime) {
+            localStorage.clear();
+            localStorage.setItem("primeira_vez","1");
+            localStorage.setItem("remover", "1");                   // dps o coisa é que tem de colocar a 0
+        } else {
+            if(firstTime == "0") {
+                localStorage.clear();
+                localStorage.setItem("primeira_vez","1");
+                localStorage.setItem("remover", "1");
+            } else {
+                ingredients = JSON.parse(localStorage.getItem("ingredientes_disponiveis"));
+                filters = JSON.parse(localStorage.getItem("filtros"));
+            }
+        }
+    } else {
+        if (localStorage.getItem("remover") == "1") {
+            localStorage.removeItem("ingredientes_disponiveis");
+
+            localStorage.removeItem("receitas");
+
+            localStorage.removeItem("filtros");
+            localStorage.setItem("primeira_vez", "0");
+        } else {
+            ingredients = JSON.parse(localStorage.getItem("ingredientes_disponiveis"));
+            filters = JSON.parse(localStorage.getItem("filtros"));
+            
+            localStorage.setItem("remover", "1");
+            localStorage.setItem("primeira_vez", "0");
+        }
+    }
+}
 
 function responsive_checkbox() {
     // Para os filtros
     $(".customFilter").change(function() {
+        var val = $(this).val();
         if (this.checked) {
-            filters.push($(this).val());
+            if (!filters.includes(val))
+                filters.push(val);
         } else {
-            filters = arrayRemove(filters, $(this).val());
+            if (filters.includes(val))
+                filters = arrayRemove(filters, val);
         }
     });
 
     // Para o resto das checkboxes
     $(".custom").change(function() {
+        var val = $(this).val();
         if (this.checked) {
-            ingredients.push($(this).val());
+            if (!ingredients.includes(val))
+                ingredients.push(val);
         } else {
-            ingredients = arrayRemove(ingredients, $(this).val());
+            if (ingredients.includes(val))
+                ingredients = arrayRemove(ingredients, $(this).val());
         }
     });
 }
@@ -38,11 +82,7 @@ function replace_accent(text) {
 
 function make_search() {
     // retirar valores previamente guardados no localStorage
-    if (localStorage.getItem("ingredientes_disponiveis") != null)
-        localStorage.removeItem("ingredientes_disponiveis");
-
-    if (localStorage.getItem("receitas") != null)
-        localStorage.removeItem("receitas");
+    // localStorage.setItem("manter_ingredientes", true);
 
     console.log(filters);
     console.log(ingredients);
@@ -75,7 +115,7 @@ function make_search() {
         if (recipes.length > 10)            // se existirem mais de 10 receitas a dar match
             recipes = recipes.slice(0, 10);           // então retiramos o subarray com as primeiras 10 e ignoramos o resto
 
-        
+        localStorage.setItem("filtros", JSON.stringify(filters));
         localStorage.setItem("receitas" , JSON.stringify(recipes));
         localStorage.setItem("ingredientes_disponiveis", JSON.stringify(ingredients))
 
