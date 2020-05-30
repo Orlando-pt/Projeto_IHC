@@ -1,5 +1,9 @@
+
+var ingredients;
 $(document).ready(function() {
     $('#first').trigger('click');
+
+    ingredients = localStorage.getItem("ingredientes_disponiveis");
 
     display_recipe_info(window.location.search.substring(1).split("&")[0].split("=")[1]); // goes to the url and checks wich param has been sent
 });
@@ -73,7 +77,7 @@ function append_to_London(product, quantity) {
     } else if(window.location.search.substring(1).split("&")[1].split("=")[1] === "recipe_search" ) {                                            // caso tenha sido através da pesquisa de receitas...
         var html_code = "<div class=\"row\">" +
             "<div class=\"col-1\">" +
-            "<i class=\"fas fa-times\"></i>" + 
+            check_ingredient(product) +
             "</div>" +
             "<div class=\"col-5\">" +
             "<p style=\"float:left; margin-left: 5%;\">" + product + "</p>" +
@@ -96,6 +100,13 @@ function append_to_Paris(step_number, step_description) {
         "</div>";
 
     $("#Paris").append(html_code);
+}
+
+function check_ingredient(product) {
+    if (!ingredients.includes(product)) 
+        return "<i class=\"fas fa-times\"></i>";
+    else
+        return "<i class=\"fas fa-check\"></i>";
 }
 
 function replace_accent(text) {

@@ -37,7 +37,13 @@ function replace_accent(text) {
 }
 
 function make_search() {
-    localStorage.clear()
+    // retirar valores previamente guardados no localStorage
+    if (localStorage.getItem("ingredientes_disponiveis") != null)
+        localStorage.removeItem("ingredientes_disponiveis");
+
+    if (localStorage.getItem("receitas") != null)
+        localStorage.removeItem("receitas");
+        
     console.log(filters);
     console.log(ingredients);
 

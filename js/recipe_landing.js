@@ -3,7 +3,8 @@ $(document).ready(function () {
     var receitas = JSON.parse(localStorage.getItem("receitas"));
     var ingredients = JSON.parse(localStorage.getItem("ingredientes_disponiveis"));
     
-    //console.log(ingredients);
+    console.log(receitas);
+    console.log(ingredients);
 
     load_receitas(receitas, ingredients);
 });
