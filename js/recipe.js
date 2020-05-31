@@ -19,7 +19,7 @@ function fav_or_not(index) {
     if (fav_recipes != null) {
         console.log(recipe_index);
         if (fav_recipes.includes(index))
-            $("#Chinatown").toggleClass('fa-heart fa-heart-broken');
+            $("#Chinatown").attr('src','imagens/removefav.png');
     }
 }
 
@@ -30,14 +30,14 @@ function add_favorites() {
 
         if (fav_recipes == null) {
             fav_recipes = [recipe_index];
-            $("#Chinatown").toggleClass('fa-heart fa-heart-broken');                // muda o símbolo
+            $("#Chinatown").atrr('src','imagens/removefav.png') ;                // muda a imagem
         } else {
             if (fav_recipes.includes(recipe_index)) {
                 fav_recipes = arrayRemove(fav_recipes, recipe_index);
-                $("#Chinatown").toggleClass('fa-heart-broken fa-heart');
+                $("#Chinatown").attr('src','imagens/addfav.png');
             } else {
                 fav_recipes.push(recipe_index);
-                $("#Chinatown").toggleClass('fa-heart fa-heart-broken');
+                $("#Chinatown").attr('src','imagens/removefav.png');
             }
         }
 
@@ -95,9 +95,19 @@ function change_text(recipe) {
         console.log(recipe.ingredients[i] + " e " + recipe.quantity[i])
         append_to_London(recipe.ingredients[i], recipe.quantity[i]);
     }
+    if (window.location.search.substring(1).split("&")[1].split("=")[1] === "top10") {
+        var glovo = "<div>"+
+        "<p style='cursor:pointer;font-size:90%;font-weight:bold;color:rgb(12, 141, 96);padding:2%;border-radius:25px;text-align:center;background-color: rgb(253, 190, 2)'><i class='fas fa-shopping-basket'></i> Encomende os ingredientes com a Glovo!</p>"+
+        "</div>";
+
+        $("#London").append(glovo);
+    }
+
     $("#London").append("</br>");
     $("#London").append("</br>");
     $("#London").append("</br>");
+    
+
 
     // Now adding steps
     $("#Paris").append("</br>");
@@ -121,13 +131,13 @@ function append_to_London(product, quantity) {
             "<p style=\"float: right; margin-right: 20%;\">" + quantity + "</p>" +
             "</div>" +
             "</div>";
+
     } else if(window.location.search.substring(1).split("&")[1].split("=")[1] === "recipe_search" ) {                                            // caso tenha sido através da pesquisa de receitas...
         var html_code = "<div class=\"row\">" +
             "<div class=\"col-1\">" +
-            check_ingredient(product) +
             "</div>" +
             "<div class=\"col-5\">" +
-            "<p style=\"float:left; margin-left: 5%;\">" + product + "</p>" +
+            check_ingredient(product) + product + "</p>" +
             "</div>" +
             "<div class=\"col-6\">" +
             "<p style=\"float: right; margin-right: 20%;\">" + quantity + "</p>" +
@@ -151,9 +161,9 @@ function append_to_Paris(step_number, step_description) {
 
 function check_ingredient(product) {
     if (ingredients.includes(product)) 
-        return "<i class=\"fas fa-check\"></i>";
+        return "<p style=\"float:left; margin-left: 5%;\">";
     else
-        return "<i class=\"fas fa-times\"></i>";
+        return "<p style=\"float:left; margin-left: 5%;color:red;\">";
 }
 
 function replace_accent(text) {

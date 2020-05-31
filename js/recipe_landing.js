@@ -34,9 +34,11 @@ function append_recipe(recipe, percentage) {                                    
                 '<div class="row justify-content-center" style="word-break:break-word;padding:5%;background: rgb(255, 233, 197); ">' + 
                     '<p id="title" style="margin:initial; text-align: center; color: rgb(0, 0, 0);">' + recipe.title + '</p>' + 
                 '</div>' + 
-                '<div class="row " style="word-break:break-all;padding:5%; display: flex; flex-wrap: nowrap; flex-direction: row; justify-content: space-evenly; background:rgb(255, 190, 69);">' + 
+                '<div class="row " style="word-break:break-all;padding-top:5%;padding-right:5%;padding-left:5%;paddin-bottom:0%; display: flex; flex-wrap: nowrap; flex-direction: row; justify-content: space-evenly; background:rgb(255, 190, 69);">' + 
                     '<p style="margin:initial;"><i class=" far fa-clock "></i><span id="time"> 45</span> mins</p> <p id="estrelas" style="margin:initial;">' + display_evaluation(5) + '</p>' + // caso se tivesse colocado avaliação no json
-                    '<p style="margin:initial;">' + display_percentage(percentage) + '</p>' +
+                '</div>' + 
+                '<div class="row " style="word-break:break-all; padding-top:0; display: flex; flex-wrap: nowrap; flex-direction: row; justify-content: space-evenly; background:rgb(255, 190, 69);">' + 
+                    '<p style="margin:initial; font-size:70%">' + display_percentage(percentage) + '</p>' +
                 '</div>' + 
                 '<div class="row justify-content-center img_div" style="padding: 5%; box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15); background: #E3DFD7;">' + 
                     '<img id="imagem" src="' + recipe.image_path + '" style="width: 100%; height: 100%;cursor:pointer;">' + 
@@ -50,7 +52,7 @@ function append_recipe(recipe, percentage) {                                    
 }
 
 function display_percentage(percentage) {
-    return ''.concat((percentage[0] * percentage[1]).toString(), "/", percentage[1].toString())
+    return ''.concat("tem ",(percentage[0] * percentage[1]).toString().bold(), " dos ", percentage[1].toString().bold(), " ingredientes necessários")
 }
 
 function replace_accent(text) {
