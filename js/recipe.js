@@ -16,7 +16,7 @@ function fav_or_not(index) {
     var fav_recipes = JSON.parse(localStorage.getItem("receitas_favoritas"));
 
     if (fav_recipes != null) {
-        console.log(recipe_index);
+        //console.log(recipe_index);
         if (fav_recipes.includes(index))
             $("#Chinatown").attr('src','imagens/removefav.png');
     }
@@ -55,7 +55,7 @@ function display_recipe_info(recipe_name) {
         var current_recipe;
         for (var i = 0; i < data.length; i++) {
             current_recipe = data[i];
-            console.log(current_recipe);
+            //console.log(current_recipe);
             if (replace_accent(current_recipe.title).toUpperCase() === recipe_name.toUpperCase()) {
                 if (current_recipe.ingredients.length != current_recipe.quantity.length)
                     alert("Erro nas quantidades");
@@ -79,7 +79,7 @@ function previous_page() {
 }
 
 function change_text(recipe) {
-    console.log(recipe);
+    //console.log(recipe);
     var i;
 
     // change all the text in html with the given recipe 
@@ -91,7 +91,7 @@ function change_text(recipe) {
 
     // Add the ingredients
     for (i = 0; i < recipe.ingredients.length; i++) {
-        console.log(recipe.ingredients[i] + " e " + recipe.quantity[i])
+        //console.log(recipe.ingredients[i] + " e " + recipe.quantity[i])
         append_to_London(recipe.ingredients[i], recipe.quantity[i]);
     }
     if (window.location.search.substring(1).split("&")[1].split("=")[1] === "top10") {
@@ -184,7 +184,7 @@ function replace_accent(text) {
 }
 
 function openCity(evt, cityName) {
-    console.log(cityName);
+    //console.log(cityName);
     // Declare all variables
     var i, tabcontent, tablinks;
 

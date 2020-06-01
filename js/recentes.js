@@ -8,18 +8,20 @@ function show_recent_recipes() {
 
         var recent_recipes = JSON.parse(localStorage.getItem("receitas_recentes"));
         //console.log(recent_recipes);
-        for (var i = 0; i < recent_recipes.length; i++) {
+        if (recent_recipes != null) {
+            for (var i = 0; i < recent_recipes.length; i++) {
             
-            append_html(data[recent_recipes[i]], i + 1);
-        }
-
-        $(".titulo").click(function(event) {
-            click_recipe_text(event);
-        });
+                append_html(data[recent_recipes[i]], i + 1);
+            }
     
-        $(".im").click(function(event) {
-            click_recipe_id(event);
-        });
+            $(".titulo").click(function(event) {
+                click_recipe_text(event);
+            });
+        
+            $(".im").click(function(event) {
+                click_recipe_id(event);
+            });
+        }
     });
 }
 

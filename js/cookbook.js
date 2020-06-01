@@ -7,18 +7,19 @@ function show_favs() {
 
         var fav_recipes = JSON.parse(localStorage.getItem("receitas_favoritas"));
         //console.log(fav_recipes);
-
-        for (var i = 0; i < fav_recipes.length; i++) {
-            append_html(data[fav_recipes[i]], i + 1);
-        }
-
-        $(".titulo").click(function(event) {
-            click_recipe_text(event);
-        });
+        if (fav_recipes != null) {
+            for (var i = 0; i < fav_recipes.length; i++) {
+                append_html(data[fav_recipes[i]], i + 1);
+            }
     
-        $(".im").click(function(event) {
-            click_recipe_id(event);
-        });
+            $(".titulo").click(function(event) {
+                click_recipe_text(event);
+            });
+        
+            $(".im").click(function(event) {
+                click_recipe_id(event);
+            });
+        }
     });
 }
 
