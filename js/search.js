@@ -84,17 +84,17 @@ function make_search() {
     // retirar valores previamente guardados no localStorage
     // localStorage.setItem("manter_ingredientes", true);
 
-    console.log(filters);
-    console.log(ingredients);
+    //console.log(filters);
+    //console.log(ingredients);
 
     var recipes = [];
     
-    $.getJSON("https://api.jsonbin.io/b/5ebad993a47fdd6af162107f/2", function( data ) {
+    $.getJSON("https://api.jsonbin.io/b/5ed4c25179382f568bd0f10c", function( data ) {
 
         var current_recipe;
         for (var i = 0; i < data.length; i++) {
             current_recipe = data[i];
-            console.log(current_recipe);
+            //console.log(current_recipe);
             if (filters.includes(current_recipe.category) || filters.length === 0) {
                 var percentage = check_similar_arr(ingredients, current_recipe.ingredients);
 

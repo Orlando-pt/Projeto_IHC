@@ -2,7 +2,7 @@
     {
         "title": "Francesinha",
         "category": "Portuguesa",
-        "image_path" : "./img/francesinha.jpg",
+        "image_path": "./img/francesinha.jpg",
         "difficulty": 2,
         "ingredients": [
             "bife de vaca",
@@ -37,7 +37,7 @@
     {
         "title": "Almôndegas de Soja c/ molho de tomate",
         "category": "Vegetariano",
-        "image_path" : "./img/meatball.jpg",
+        "image_path": "./img/meatball.jpg",
         "difficulty": 3,
         "ingredients": [
             "azeite",
@@ -91,7 +91,7 @@
     {
         "title": "Bolo de Chocolate em Caneca",
         "category": "Doces",
-        "image_path" : "./img/cake.PNG",
+        "image_path": "./img/cake.PNG",
         "difficulty": 1,
         "ingredients": [
             "ovo",
@@ -127,7 +127,7 @@
     {
         "title": "Bacalhau com Natas",
         "category": "Tradicional",
-        "image_path" : "./img/bacalhau.jpg",
+        "image_path": "./img/bacalhau.jpg",
         "difficulty": 4,
         "ingredients": [
             "batata",
@@ -180,7 +180,7 @@
     {
         "title": "Arroz de Marisco",
         "category": "Mediterrâneo",
-        "image_path" : "./img/marisco.jpg",
+        "image_path": "./img/marisco.jpg",
         "difficulty": 4,
         "ingredients": [
             "marisco variado",
@@ -223,7 +223,7 @@
     {
         "title": "Frango com limão e orégãos",
         "category": "Portuguesa",
-        "image_path" : "./img/frangolimao.jpg",
+        "image_path": "./img/frangolimao.jpg",
         "difficulty": 4,
         "ingredients": [
             "coxas de frango",
@@ -271,7 +271,7 @@
     {
         "title": "Sushi de Banana",
         "category": "Doces",
-        "image_path" : "./img/sushi.jpg",
+        "image_path": "./img/sushi.jpg",
         "difficulty": 1,
         "ingredients": [
             "banana",
@@ -308,7 +308,7 @@
     {
         "title": "Arroz de Pato",
         "category": "Tradicional",
-        "image_path" : "./img/pato.jpg",
+        "image_path": "./img/pato.jpg",
         "difficulty": 5,
         "ingredients": [
             "água",
@@ -363,7 +363,7 @@
     {
         "title": "Salada de grão com atum",
         "category": "Saladas",
-        "image_path" : "./img/graoeatum.jpg",
+        "image_path": "./img/graoeatum.jpg",
         "difficulty": 3,
         "ingredients": [
             "ovo",
@@ -411,7 +411,7 @@
     {
         "title": "Panquecas",
         "category": "Doces",
-        "image_path" : "./img/panquecas.jpg",
+        "image_path": "./img/panquecas.jpg",
         "difficulty": 1,
         "ingredients": [
             "farinha",
@@ -446,7 +446,7 @@
     {
         "title": "Salada fria de massa com salmão",
         "category": "Saladas",
-        "image_path" : "./img/saladamassasalmao.jpg",
+        "image_path": "./img/saladamassasalmao.jpg",
         "difficulty": 3,
         "ingredients": [
             "salmão",
@@ -499,7 +499,7 @@
     {
         "title": "Lasanha",
         "category": "Italiana",
-        "image_path" : "./img/lasanha.jpg",
+        "image_path": "./img/lasanha.jpg",
         "difficulty": 4,
         "ingredients": [
             "azeite",
@@ -553,5 +553,173 @@
         ],
         "preview": "A lasanha é uma receita tipicamente italiana, feita com carne e molho de tomate sobre camadas de folhas de lasanha e molho bechamel. Uma refeição deliciosa para toda a família.",
         "imagem": "https://www.pingodoce.pt/receitas/lasanha/"
+    },
+    {
+        "title": "Crepes com morango e chantilly",
+        "category": "Doces",
+        "image_path": "./img/crepesmorango.jpg",
+        "difficulty": 1,
+        "ingredients": [
+            "morangos",
+            "chantilly",
+            "farinha",
+            "ovos",
+            "leite",
+            "óleo"
+        ],
+        "quantity": [
+            "q.b",
+            "q.b",
+            "250 g",
+            "4",
+            "500 ml",
+            "2 col. sopa"
+        ],
+        "time": 10,
+        "portions": 15,
+        "rating": 4,
+        "steps": [
+            "Misture a farinha e o sal num recipiente fundo. Faça um buraco no meio e coloque os ovos.",
+            "Misture e junte o extrato de baunilha e o óleo. Se for demasiado duro de misturar, junte um pouco de leite.",
+            "Depois, junte o leite pouco a pouco, misturando sempre. No fim, cubra o recipiente (só para proteger) e deixe repousar por 1 hora (na geladeira/frigorífico).",
+            "Aquecer uma frigideira ou uma frigideira própria para crepes e untar de óleo com um papel de cozinha. Verter um pouco de massa dentro e deixar cozer por um minuto. Virar do avesso, cozer 1 minuto",
+            "Recheie com açúcar em pó / de confeiteiro, doce, geleia, mel, chocolate para barrar, açúcar ou deixe assim mesmo. Bom Apetite!"
+        ],
+        "preview": "Uma deliciosa sobremesa para um almoço de domingo!",
+        "imagem": "nao sei que por aqui"
+    },
+    {
+        "title": "Gelados de melancia",
+        "category": "Doces",
+        "image_path": "./img/geleadosmelancia.jpg",
+        "difficulty": 1,
+        "ingredients": [
+            "melancia",
+            "leite condensado"
+        ],
+        "quantity": [
+            "1 kg",
+            "1 lata"
+        ],
+        "time": 15,
+        "portions": 5,
+        "rating": 4,
+        "steps": [
+            "Corte um quilo de melancia em cubos (de preferência sem sementes) e congele-os durante, pelo menos, quatro horas.",
+            "Triture a melancia congelada, num liquidificador ou no robô de cozinha, juntamente com uma lata de leite condensado retirada do frigorífico e já está!"
+        ],
+        "preview": "Alternativa saúdável para os miúdos lá de casa!",
+        "imagem": "nao sei que por aqui"
+    },
+    {
+        "title": "Pizza com espinafres",
+        "category": "Italiana",
+        "image_path": "./img/pizza.jpg",
+        "difficulty": 3.5,
+        "ingredients": [
+            "massa de pizza",
+            "molho de tomate",
+            "mozzarella",
+            "azeite",
+            "alho",
+            "espinafres",
+            "orégãos"
+        ],
+        "quantity": [
+            "1 pc",
+            "3 col. sopa",
+            "80 g",
+            "1 col. sopa",
+            "1 dente",
+            "2 embalagens",
+            "q.b"
+        ],
+        "time": 50,
+        "portions": 1,
+        "rating": 3.5,
+        "steps": [
+            "Pré-aqueça o forno a 230˚ C.",
+            "Estenda a massa num tabuleiro, previamente forrado com papel vegetal.",
+            "Distribua o molho de tomate por cima da pizza, polvilhe com o queijo mozzarella ralado e leve ao forno cerca de 15 a 20 minutos.",
+            "Coloque ao lume uma frigideira larga com o azeite e o alho picado e, quando estiver bem quente, introduza as folhas de espinafres. Deixe saltear até murcharem.",
+            "Corte a mozzarella em rodelas.",
+            "Distribua os espinafres e as rodelas de mozzarella pela superfície da pizza e polvilhe com orégãos."
+        ],
+        "preview": "Quem diria que não é preciso ir ao restaurante para se comer uma boa pizza?",
+        "imagem": "nao sei que por aqui"
+    },
+    {
+        "title": "Macarons",
+        "category": "Doces",
+        "image_path": "./img/macarons.jpg",
+        "difficulty": 5,
+        "ingredients": [
+            "açúcar",
+            "farinha de amêndoa",
+            "clara de ovo",
+            "açúcar em pó",
+            "corante"
+        ],
+        "quantity": [
+            "200 g",
+            "150 g",
+            "4",
+            "90 g",
+            "opcional"
+        ],
+        "time": 90,
+        "portions": 10,
+        "rating": 3.2,
+        "steps": [
+            "Coloque as claras e o açúcar em um panela no fogo baixo, até o açúcar dissolver. Só aqueça, não precisa ferver.",
+            "Com uma batedeira, bata a mistura que aqueceu acima em claras em neve até formar um merengue.",
+            "Coloque o corante e misture bem até a cor ficar homogênea.",
+            "Passar pela peneira os ingredientes secos: farinha de amêndoas e açúcar de confeiteiro",
+            "Junte os ingredientes secos e peneirados ao merengue de claras fazendo movimentos suaves. Sempre mexendo de baixo para cima e do centro para a borda do recipiente. Mexa bem até ficar uniforme, macia e brilhante.",
+            "Coloque essa mistura em um saco de confeitar e corte a ponta",
+            "Colocar uma folha de papel vegetal num tabuleiro de forno e faça bolas de aproximadamente 4cm de diametro com o saco de confeitar.",
+            "Levar ao forno por 18 minutos a 180ºC sem pré-aquecer."
+        ],
+        "preview": "Um doce que custa a fazer mas se correr bem vale a pena!",
+        "imagem": "nao sei que por aqui"
+    },
+    {
+        "title": "Omolete de Espinafres e Tomate",
+        "category": "Mediterrâneo",
+        "image_path": "./img/omelete.jpg",
+        "difficulty": 1,
+        "ingredients": [
+            "ovo",
+            "espinafres",
+            "tomate",
+            "cebola",
+            "sal",
+            "pimenta",
+            "azeite"
+        ],
+        "quantity": [
+            "2",
+            "1/2 chávena",
+            "1",
+            "1/4",
+            "q.b",
+            "q.b",
+            "1 c. chá"
+        ],
+        "time": 15,
+        "portions": 2,
+        "rating": 4,
+        "steps": [
+            "Numa tigela mexa os ovos. Tempere com sal e pimenta.",
+            "Descongele os espinafres no microondas, esprema o excesso de água e corte-os grosseiramente.",
+            "Leve ao lume uma frigideira anti-aderente com o azeite. Coloque as rodelas de tomate numa única camada. Deixe alourar, vire e aloure do outro lado. Retire da frigideira e reserve.",
+            "Na mesma frigideia coloque a cebola e os espinafres. Tempere com sal e pimenta. Cozinhe até a cebola estar translucida. Espalhe o tomate pela frigideira.",
+            "Verta o ovo de forma a que se espalhe por toda a frigideira. Espalhe o queijo por cima do ovo.",
+            "Cubra a frigideira com uma tampa, se tiver. Deixe cozinhar até o topo do ovo estar quase firme.",
+            "Com a ajuda de uma espátula, dobre a omelete ao meio.",
+            "Sirva com molho picante a gosto."
+        ],
+        "preview": "Melhor pequeno-almoço ou lanche!",
+        "imagem": "nao sei que por aqui"
     }
 ]

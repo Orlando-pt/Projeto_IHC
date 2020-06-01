@@ -9,8 +9,7 @@ $(document).ready(function() {
 
     add_favorites();
 
-    display_recipe_info(window.location.search.substring(1).split("&")[0].split("=")[1]);
-    
+    display_recipe_info(window.location.search.substring(1).split("&")[0].split("=")[1]);    
 });
 
 function fav_or_not(index) {
@@ -30,14 +29,14 @@ function add_favorites() {
 
         if (fav_recipes == null) {
             fav_recipes = [recipe_index];
-            $("#Chinatown").atrr('src','imagens/removefav.png') ;                // muda a imagem
+            $("#Chinatown").attr("src","imagens/removefav.png") ;                // muda a imagem    $("#my_image").attr("src","second.jpg");
         } else {
             if (fav_recipes.includes(recipe_index)) {
                 fav_recipes = arrayRemove(fav_recipes, recipe_index);
-                $("#Chinatown").attr('src','imagens/addfav.png');
+                $("#Chinatown").attr("src","imagens/addfav.png");
             } else {
                 fav_recipes.push(recipe_index);
-                $("#Chinatown").attr('src','imagens/removefav.png');
+                $("#Chinatown").attr("src","imagens/removefav.png");
             }
         }
 
@@ -51,7 +50,7 @@ function arrayRemove(arr, value) {
 
 function display_recipe_info(recipe_name) {
     recipe_name = recipe_name.split("_").join(" ");
-    $.getJSON("https://api.jsonbin.io/b/5ecffbdf7741ef56a5638e93", function(data) {
+    $.getJSON("https://api.jsonbin.io/b/5ed4c25179382f568bd0f10c", function(data) {
 
         var current_recipe;
         for (var i = 0; i < data.length; i++) {
@@ -97,7 +96,13 @@ function change_text(recipe) {
     }
     if (window.location.search.substring(1).split("&")[1].split("=")[1] === "top10") {
         var glovo = "<div>"+
-        "<p style='cursor:pointer;font-size:90%;font-weight:bold;color:rgb(12, 141, 96);padding:2%;border-radius:25px;text-align:center;background-color: rgb(253, 190, 2)'><i class='fas fa-shopping-basket'></i> Encomende os ingredientes com a Glovo!</p>"+
+        "<p id=\"bttn_comprar\" style='cursor:pointer;font-size:90%;font-weight:bold;color:rgb(12, 141, 96);padding:2%;border-radius:25px;text-align:center;background-color: rgb(253, 190, 2)'><i class='fas fa-shopping-basket'></i> Encomende os ingredientes com a Glovo!</p>"+
+        "</div>";
+
+        $("#London").append(glovo);
+    } else if (window.location.search.substring(1).split("&")[1].split("=")[1] === "recipe_search") {
+        var glovo = "<div>"+
+        "<p id=\"bttn_comprar\" style='cursor:pointer;font-size:90%;font-weight:bold;color:rgb(12, 141, 96);padding:2%;border-radius:25px;text-align:center;background-color: rgb(253, 190, 2)'><i class='fas fa-shopping-basket'></i> Encomende os ingredientes em falta com a Glovo!</p>"+
         "</div>";
 
         $("#London").append(glovo);
@@ -106,6 +111,11 @@ function change_text(recipe) {
     $("#London").append("</br>");
     $("#London").append("</br>");
     $("#London").append("</br>");
+    
+    // alertar que ao clicar no botão de compra
+    $("#bttn_comprar").click(function() {
+        alert("Esta funcionalidade seria implementada quando se contactasse a globo para disponibilizar API.")
+    });
     
 
 
