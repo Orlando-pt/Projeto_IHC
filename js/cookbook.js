@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function show_favs() {
-    $.getJSON("https://api.jsonbin.io/b/5ed4c25179382f568bd0f10c", function(data) {
+    $.getJSON("https://api.jsonbin.io/b/5ed6810f60775a568586d656", function(data) {
 
         var fav_recipes = JSON.parse(localStorage.getItem("receitas_favoritas"));
         //console.log(fav_recipes);

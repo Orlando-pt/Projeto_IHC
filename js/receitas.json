@@ -48,7 +48,7 @@
             "farinha",
             "soja granulada",
             "salsa",
-            "oregãos",
+            "orégãos",
             "sal",
             "tomate",
             "açúcar",
@@ -232,7 +232,7 @@
             "limão",
             "alho",
             "cenoura",
-            "cebolas",
+            "cebola",
             "orégãos",
             "vinho branco",
             "azeite",
@@ -277,7 +277,7 @@
             "banana",
             "limão",
             "chocolate preto",
-            "morangos",
+            "morango",
             "coco ralado",
             "manteiga de amendoim",
             "granola"
@@ -419,7 +419,7 @@
             "fermento em pó",
             "sal",
             "ovo",
-            "leite meio gordo",
+            "leite meio-gordo",
             "manteiga"
         ],
         "quantity": [
@@ -560,7 +560,7 @@
         "image_path": "./img/crepesmorango.jpg",
         "difficulty": 1,
         "ingredients": [
-            "morangos",
+            "morango",
             "chantilly",
             "farinha",
             "ovo",
@@ -619,10 +619,10 @@
         "ingredients": [
             "massa de pizza",
             "molho de tomate",
-            "mozzarella",
+            "mozzarela",
             "azeite",
             "alho",
-            "espinafres",
+            "espinafre",
             "orégãos"
         ],
         "quantity": [
@@ -690,7 +690,7 @@
         "difficulty": 1,
         "ingredients": [
             "ovo",
-            "espinafres",
+            "espinafre",
             "tomate",
             "cebola",
             "sal",

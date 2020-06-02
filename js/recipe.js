@@ -50,7 +50,7 @@ function arrayRemove(arr, value) {
 
 function display_recipe_info(recipe_name) {
     recipe_name = recipe_name.split("_").join(" ");
-    $.getJSON("https://api.jsonbin.io/b/5ed4c25179382f568bd0f10c", function(data) {
+    $.getJSON("https://api.jsonbin.io/b/5ed6810f60775a568586d656", function(data) {
 
         var current_recipe;
         for (var i = 0; i < data.length; i++) {
